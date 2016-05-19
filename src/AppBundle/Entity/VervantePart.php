@@ -20,18 +20,27 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="VervantePart")
  */
 class VervantePart {
-    //put your code here
-    /**
+    //put your code here    
+     /**
      * @var integer
      *
      * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $Id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="PartNumber", type="integer")
      */
     private $PartNumber;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Descripton", type="Text")
+     * @ORM\Column(name="Descripton", type="text")
      */
     private $Descripton;
 
@@ -82,5 +91,15 @@ class VervantePart {
     public function getDescripton()
     {
         return $this->Descripton;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->Id;
     }
 }
